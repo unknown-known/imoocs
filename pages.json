@@ -19,7 +19,9 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationStyle":"custom",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		// 导航栏背景色
+		"navigationBarTextStyle":"white"
 	},
 	"tabBar":{
 		"color":"#333333",

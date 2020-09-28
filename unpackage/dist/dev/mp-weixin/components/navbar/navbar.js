@@ -76,7 +76,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
+var components = {
+  uniIcons: function() {
+    return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 38))
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -126,16 +130,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
-    return {};
-
+    return {
+      navHeight: 20,
+      navBarHight: 45,
+      windWidth: 375 };
 
   },
   created: function created() {
-    var info = uni.getSystemInfoSync();
-    console.log(info);
+    // 系统状态栏设置
+    var height = uni.getSystemInfoSync().statusBarHeight;
+    this.navHeight = height;
+
+    // 胶囊位置获取
+    var menuButtom = uni.getMenuButtonBoundingClientRect();
+    // (胶囊底部高度-状态栏高度)+(胶囊高度-状态栏内的高度)=导航栏的高度
+    this.navBarHight = menuButtom.bottom - height + (menuButtom.top - height);
+
+    this.windWidth = menuButtom.left;
+    console.log(windWidth);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

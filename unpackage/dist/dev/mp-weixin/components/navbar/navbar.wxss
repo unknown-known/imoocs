@@ -26,25 +26,27 @@
 /* 文章场景相关 */
 .nav-bar .nav-bar-fixed {
   position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
   top: 0;
   left: 0;
   z-index: 99;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #F07373;
+}
+.nav-bar .nav-bar-fixed .nav-bar-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  box-sizing: border-box;
   padding: 0 15px;
-  width: 100%;
   height: 45px;
-  background-color: #F07373;
 }
-.nav-bar .nav-bar-fixed .nav-search {
+.nav-bar .nav-bar-fixed .nav-bar-content .nav-search {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -57,12 +59,11 @@
   background-color: #FFFFFF;
   border-radius: 30px;
 }
-.nav-bar .nav-bar-fixed .nav-search .nav-search-icon {
+.nav-bar .nav-bar-fixed .nav-bar-content .nav-search .nav-search-icon {
   width: 10px;
   height: 10px;
-  border: 1px solid #ccc;
 }
-.nav-bar .nav-bar-fixed .nav-search .nav-search-text {
+.nav-bar .nav-bar-fixed .nav-bar-content .nav-search .nav-search-text {
   margin-left: 10px;
   font-size: 12px;
   color: #999999;

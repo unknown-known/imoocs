@@ -48,15 +48,15 @@
 		top: 0;
 		left: 0;
 		z-index: 99;
-		box-sizing: border-box;
 		width: 100%;
 		background-color: $mk-main-color;
 		.nav-bar-content{
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			box-sizing: border-box;
 			padding: 0 15px;
-			height: 45px;
+			// height: 45px;
 			.nav-search{
 				display: flex;
 				align-items: center;
@@ -66,6 +66,9 @@
 				background-color: #FFFFFF;
 				border-radius: 30px;
 				.nav-search-icon{
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					width: 10px;
 					height: 10px;
 				}

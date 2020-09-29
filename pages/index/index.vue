@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
 		<navbar></navbar>
+		<tab></tab>
 	</view>
 </template>
 

@@ -12,7 +12,7 @@
 				</view>
 			</view>
 		</view>
-		<view style="height: 45px;"></view>
+		<view :style="{height: navBarHight+navHeight +'px'}"></view>
 	</view>
 </template>
 

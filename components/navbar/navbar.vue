@@ -2,17 +2,17 @@
 	<view class="nav-bar">
 		<view class="nav-bar-fixed">
 			<!-- 导航栏占位符 -->
-			<view :style="{height:navHeight+'px'}"></view>
-			<view class="nav-bar-content" :style="{height:navBarHight+'px',width:windWidth+'px'}">
+			<view :style="{height:statusBarHeight+'px'}"></view>
+			<view class="nav-bar-content" :style="{height:navBarHight+'px',width:windowWidth+'px'}">
 				<view class="nav-search">
 					<view class="nav-search-icon">
-						<uni-icons type="search" size="16"></uni-icons>
+						<uni-icons type="search" size="16" color="#999"></uni-icons>
 					</view>
 					<view class="nav-search-text">Uni-app</view>
 				</view>
 			</view>
 		</view>
-		<view :style="{height: navBarHight+navHeight +'px'}"></view>
+		<view :style="{height: navBarHight+statusBarHeight +'px'}"></view>
 	</view>
 </template>
 
@@ -20,23 +20,28 @@
 	export default {
 		data() {
 			return {
-				navHeight:20,
+				statusBarHeight:20,
 				navBarHight:45,
-				windWidth:375
+				windowWidth:375
 			};
 		},
 		created(){
 			// 系统状态栏设置
-			const height = uni.getSystemInfoSync().statusBarHeight;
-			this.navHeight = height;
+			const info = uni.getSystemInfoSync();
+			this.statusBarHeight = info.statusBarHeight;
+			this.windWidth = info.windowWidth;
+			
+			// #ifndef H5 || APP-PLUS || MP-ALIPAY
 			
 			// 胶囊位置获取
 			const menuButtom = uni.getMenuButtonBoundingClientRect();
 			// (胶囊底部高度-状态栏高度)+(胶囊高度-状态栏内的高度)=导航栏的高度
-			this.navBarHight = (menuButtom.bottom - height)+(menuButtom.top - height);
+			this.navBarHight = (menuButtom.bottom - info.statusBarHeight)+(menuButtom.top - info.statusBarHeight);
+				
+			this.windowWidth = menuButtom.left;
+			// console.log(windWidth)
 			
-			this.windWidth = menuButtom.left;
-			console.log(windWidth)
+			// #endif
 		}
 	}
 </script>
@@ -66,11 +71,11 @@
 				background-color: #FFFFFF;
 				border-radius: 30px;
 				.nav-search-icon{
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					width: 10px;
-					height: 10px;
+					// display: flex;
+					// justify-content: center;
+					// align-items: center;
+					// width: 10px;
+					// height: 10px;
 				}
 				.nav-search-text{
 					margin-left: 10px;

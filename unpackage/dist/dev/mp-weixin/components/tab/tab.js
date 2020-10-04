@@ -129,13 +129,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-var _default =
+//
+//
+//
+//
+var _default2 =
 {
+  props: {
+    list: {
+      type: Array,
+      default: function _default() {
+        return [];
+      } } },
+
+
   data: function data() {
-    return {};
 
-
-  } };exports.default = _default;
+  } };exports.default = _default2;
 
 /***/ }),
 

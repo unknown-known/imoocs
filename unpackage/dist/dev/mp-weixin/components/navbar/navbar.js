@@ -140,23 +140,28 @@ var _default =
 {
   data: function data() {
     return {
-      navHeight: 20,
+      statusBarHeight: 20,
       navBarHight: 45,
-      windWidth: 375 };
+      windowWidth: 375 };
 
   },
   created: function created() {
     // 系统状态栏设置
-    var height = uni.getSystemInfoSync().statusBarHeight;
-    this.navHeight = height;
+    var info = uni.getSystemInfoSync();
+    this.statusBarHeight = info.statusBarHeight;
+    this.windWidth = info.windowWidth;
+
+
 
     // 胶囊位置获取
     var menuButtom = uni.getMenuButtonBoundingClientRect();
     // (胶囊底部高度-状态栏高度)+(胶囊高度-状态栏内的高度)=导航栏的高度
-    this.navBarHight = menuButtom.bottom - height + (menuButtom.top - height);
+    this.navBarHight = menuButtom.bottom - info.statusBarHeight + (menuButtom.top - info.statusBarHeight);
 
-    this.windWidth = menuButtom.left;
-    console.log(windWidth);
+    this.windowWidth = menuButtom.left;
+    // console.log(windWidth)
+
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

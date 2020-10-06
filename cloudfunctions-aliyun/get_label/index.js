@@ -3,6 +3,7 @@
 // 获取数据库引用
 const db = uniCloud.database()
 exports.main = async (event, context) => {
+	// 获取值
 	let label = await db.collection('label').get()
 
 	//返回数据给客户端

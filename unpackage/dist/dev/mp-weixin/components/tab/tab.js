@@ -151,6 +151,7 @@ var _default2 =
   },
   methods: {
     clickTab: function clickTab(index, item) {
+      // Tab栏切换
       this.activateIndex = index;
       this.$emit('tab', {
         data: item,

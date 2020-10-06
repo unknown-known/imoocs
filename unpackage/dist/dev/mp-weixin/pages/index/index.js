@@ -158,7 +158,25 @@ var _default =
     this.getLabel();
   },
   methods: {
+    // 获取数据
+    tab: function tab(_ref) {var index = _ref.index,data = _ref.data;
+      console.log(data, index);
+    },
     getLabel: function getLabel() {var _this = this;
+      // TODO
+      // console.log(this.$api);
+      // this.$api.get_label({
+      // 	name: 'get_label'
+      // }).then((res) => {
+      // 	// console.log(res);
+      // 	const {
+      // 		data
+      // 	} = res;
+      // 	this.tabList = data;
+      // 	console.log(this.tabList);
+      // })
+
+      // uniCloud方式请求资源
       uniCloud.callFunction({
         name: "get_label" }).
       then(

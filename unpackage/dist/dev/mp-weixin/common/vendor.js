@@ -1960,6 +1960,38 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
+/***/ 19:
+/*!********************************************************************!*\
+  !*** E:/Projects/neteaseCloudMusic/imooc-news/common/api/index.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var get_label = function get_label(data) {
+  return new Promise(function (reslove, reject) {
+    uniCloud.callFunction({
+      // name:"get_label",
+      data: data }).
+    then(function (res) {
+      if (res.result.code === 200) {
+        // .then
+        reslove(res.result);
+      } else {
+        // .catch
+        reject(res.result);
+      }
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+};var _default =
+{
+  get_label: get_label };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 17)["default"]))
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!

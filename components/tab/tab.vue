@@ -31,6 +31,7 @@
 		},
 		methods: {
 			clickTab(index, item) {
+				// Tab栏切换
 				this.activateIndex = index
 				this.$emit('tab', {
 					data: item,

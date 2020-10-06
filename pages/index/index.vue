@@ -18,7 +18,7 @@
 		methods: {
 			// 获取数据
 			tab({index,data}){
-				console.log(data,index);
+				// console.log(data,index);
 			},
 			getLabel() {
 				// TODO
